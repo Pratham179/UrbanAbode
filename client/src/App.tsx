@@ -10,12 +10,12 @@ import {
   ErrorComponent,
 } from "@pankod/refine-mui";
 
-import{
-    AccountCircleOutlined,
-    ChatBubbleOutline,
-    PeopleAltOutlined,
-    StarOutlineRounded,
-    VillaOutlined,
+import {
+  AccountCircleOutlined,
+  ChatBubbleOutline,
+  PeopleAltOutlined,
+  StarOutlineRounded,
+  VillaOutlined,
 } from '@mui/icons-material'
 
 import dataProvider from "@pankod/refine-simple-rest";
@@ -27,8 +27,8 @@ import { Title, Sider, Layout, Header } from "components/layout";
 import { CredentialResponse } from "interfaces/google";
 import { parseJwt } from "utils/parse-jwt";
 
-import { 
-  Login ,
+import {
+  Login,
   Home,
   Agents,
   MyProfile,
@@ -117,30 +117,34 @@ function App() {
           catchAll={<ErrorComponent />}
           resources={[
             {
-              name: "property",
-              list:MuiInferencer,
-              icon:<VillaOutlined/>
+              name: "properties",
+              list: AllProperties,
+              show: PropertyDetails,
+              create: CreateProperty,
+              edit: EditProperty,
+              icon: <VillaOutlined />
             },
             {
-              name: "agent",
-              list:MuiInferencer,
-              icon:<PeopleAltOutlined/>
+              name: "agents",
+              list: Agents,
+              show: AgentProfile, 
+              icon: <PeopleAltOutlined />
             },
             {
-              name: "review",
-              list:MuiInferencer,
-              icon:<StarOutlineRounded/>
+              name: "reviews",
+              list: Home,
+              icon: <StarOutlineRounded />
             },
             {
-              name: "message",
-              list:MuiInferencer,
-              icon:<ChatBubbleOutline/>
+              name: "messages",
+              list: Home,
+              icon: <ChatBubbleOutline />
             },
             {
               name: "my-profile",
-              options: {label: 'My Profile'},
-              list:MuiInferencer,
-              icon:<AccountCircleOutlined/>
+              options: { label: 'My Profile' },
+              list: MyProfile,
+              icon: <AccountCircleOutlined />
             },
           ]}
           Title={Title}

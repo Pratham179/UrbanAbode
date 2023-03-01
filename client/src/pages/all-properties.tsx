@@ -1,5 +1,5 @@
 import { Add } from "@mui/icons-material";
-import { useTable } from "@pankod/refine-core";
+import { useList } from "@pankod/refine-core";
 
 import {
   Box,
@@ -27,8 +27,8 @@ const AllProperties = () => {
           <CustomButton
             title="Add Property"
             handleClick={() => navigate('/properties/create')}
-            backgroundColor="475be8"
-            color="fcfcfc"
+            backgroundColor="#475be8"
+            color="#fcfcfc"
             icon={<Add/>}
           />
       </Stack>

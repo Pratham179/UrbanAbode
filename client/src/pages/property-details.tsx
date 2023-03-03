@@ -47,7 +47,7 @@ const PropertyDetails = () => {
     if (response) {
       mutate(
         {
-          resource: "properties",
+          resource: 'properties',
           id: id as string,
         },
         {
